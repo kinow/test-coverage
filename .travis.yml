@@ -7,7 +7,7 @@ install:
   - pip install coverage pytest-cov
 
 script:
-  - coverage run python -m unittest sample.tests
+  - coverage run -m unittest sample.tests
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
