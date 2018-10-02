@@ -12,3 +12,7 @@ class App(object):
 
     def __str__(self):
         return "App"
+
+    def test(self):
+        print("This is a test!")
+    
