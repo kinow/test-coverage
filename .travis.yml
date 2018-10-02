@@ -5,9 +5,11 @@ python:
 
 install:
   - pip install coverage pytest-cov
+  - pip install coveralls
 
 script:
   - coverage run -m unittest sample.tests
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - coveralls
