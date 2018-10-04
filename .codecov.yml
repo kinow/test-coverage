@@ -1,0 +1,34 @@
+# which branch to monitor and whether wait for ci success
+codecov:
+  branch: master
+  notify:
+    require_ci_to_pass: yes
+
+# define the colour bar limits here
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"
+
+  # diff type
+  status:
+    project: yes
+    patch: yes
+    changes: no
+
+# files to ignore
+ignore:
+  - "isodatetime/tests.py"
+
+commit:
+  status:
+    project:
+      default:
+        # commits below this threshold will be marked as failed
+        target: '75%'
+        # how much we allow the coverage to drop
+        threshold: '5%'
+
+
+# turn off comments to pull requests
+comment: off
