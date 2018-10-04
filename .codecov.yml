@@ -12,23 +12,31 @@ coverage:
 
   # diff type
   status:
-    project: yes
-    patch: yes
-    changes: no
-
-# files to ignore
-ignore:
-  - "isodatetime/tests.py"
-
-commit:
-  status:
     project:
       default:
         # commits below this threshold will be marked as failed
         target: '75%'
         # how much we allow the coverage to drop
         threshold: '5%'
+    patch:
+      default:
+        # basic
+        target: '75%'
+        threshold: '5%'
+        base: auto
+        # advanced
+        branches: null
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+        only_pulls: false
+        flags: null
+        paths: null
+    changes: no
 
+# files to ignore
+ignore:
+  - "isodatetime/tests.py"
 
 # turn off comments to pull requests
 comment: off
